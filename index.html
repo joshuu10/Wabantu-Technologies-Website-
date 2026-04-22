@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var k = "wt-theme";
+          var v = localStorage.getItem(k);
+          var dark = v === "dark" || (v !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+    <title>Wabantu Technologies — Custom Software, Apps & Websites</title>
+    <meta
+      name="description"
+      content="Wabantu Technologies designs and builds custom software, web and mobile applications, and professional websites for organizations from small businesses to enterprises."
+    />
+    <meta property="og:title" content="Wabantu Technologies — Custom Software & Digital Solutions" />
+    <meta
+      property="og:description"
+      content="Custom software, web apps, mobile apps, and business websites—engineered around your operations."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.example.com/" />
+    <meta property="og:image" content="https://www.example.com/assets/logo-wabantu.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <!-- Self-hosted fonts + Tailwind build (run: npm run build:css after HTML/class changes) -->
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-700 antialiased dark:bg-brand-navy dark:text-slate-200">
+    <a class="wt-skip" href="#main">Skip to main content</a>
+
+    <header
+      id="site-header"
+      class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/80 backdrop-blur-md transition-colors duration-300 dark:bg-transparent dark:backdrop-blur-none"
+    >
+      <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-3.5 lg:px-8">
+        <a href="#home" class="group flex shrink-0 items-center gap-2 wt-focus rounded-lg">
+          <img
+            src="assets/logo-wabantu2.png"
+            width="240"
+            height="64"
+            class="h-11 w-auto sm:h-12 md:h-14"
+            alt="Wabantu Technologies logo"
+          />
+          <span class="sr-only">Wabantu Technologies — Home</span>
+        </a>
+
+        <div class="flex flex-1 items-center justify-end gap-2 sm:gap-3">
+          <button
+            type="button"
+            id="theme-toggle"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:border-cyan-500/40 hover:text-cyan-700 dark:border-slate-600/60 dark:bg-white/5 dark:text-slate-200 dark:hover:border-cyan-400/40 dark:hover:text-cyan-200 wt-focus"
+            aria-pressed="false"
+            aria-label="Switch to dark mode"
+            title="Toggle color theme"
+          >
+            <span class="sr-only">Toggle color theme</span>
+            <svg
+              id="theme-icon-moon"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.75"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
+              />
+            </svg>
+            <svg
+              id="theme-icon-sun"
+              class="hidden h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.75"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+          </button>
+
+          <nav class="nav-track hidden items-center gap-1 lg:flex" aria-label="Primary">
+            <a
+              href="#home"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Services</a
+            >
+            <a
+              href="#solutions"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Solutions</a
+            >
+            <a
+              href="#why-us"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Why Us</a
+            >
+            <a
+              href="#custom-software"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Custom</a
+            >
+            <a
+              href="#process"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Process</a
+            >
+            <a
+              href="#demo"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Demo</a
+            >
+            <a
+              href="#partners"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >Partners</a
+            >
+            <a
+              href="#faq"
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus"
+              >FAQ</a
+            >
+            <a
+              href="#contact"
+              class="ml-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-4 py-2 text-sm font-semibold text-brand-navy shadow-glow transition hover:brightness-110 wt-focus wt-btn-shine"
+              >Contact</a
+            >
+          </nav>
+
+          <button
+            type="button"
+            id="nav-toggle"
+            class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white p-2 text-slate-700 shadow-sm dark:border-slate-600/60 dark:bg-transparent dark:text-slate-200 lg:hidden wt-focus"
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-nav"
+        class="border-t border-slate-200 bg-white/95 backdrop-blur-xl dark:border-slate-200 dark:border-slate-700/60 dark:bg-brand-navy/95 lg:hidden"
+        hidden
+      >
+        <nav class="nav-track flex max-h-[70vh] flex-col gap-1 overflow-y-auto px-4 py-4" aria-label="Mobile primary">
+          <a href="#home" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Home</a
+          >
+          <a href="#about" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >About</a
+          >
+          <a href="#services" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Services</a
+          >
+          <a
+            href="#solutions"
+            class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Solutions</a
+          >
+          <a href="#why-us" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Why Us</a
+          >
+          <a
+            href="#custom-software"
+            class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Custom Software</a
+          >
+          <a href="#process" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >How It Works</a
+          >
+          <a href="#demo" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Request Demo</a
+          >
+          <a
+            href="#partners"
+            class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >Partners</a
+          >
+          <a href="#faq" class="rounded-lg px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/5 wt-focus"
+            >FAQ</a
+          >
+          <a
+            href="#contact"
+            class="mt-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-4 py-3 text-center text-base font-semibold text-brand-navy wt-focus"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section
+        id="home"
+        class="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-28 wt-hero-mesh"
+        aria-labelledby="hero-heading"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 opacity-40"
+          aria-hidden="true"
+          style="
+            background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2394a3b8\' fill-opacity=\'0.08\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+          "
+        ></div>
+
+        <div class="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8">
+          <div class="wt-reveal lg:col-span-6">
+            <p
+              class="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-800 dark:text-cyan-200"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 wt-pulse-dot" aria-hidden="true"></span>
+              Custom software · Web &amp; mobile apps · Websites
+            </p>
+            <h1
+              id="hero-heading"
+              class="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]"
+            >
+              Custom software that fits how you work.
+              <span class="bg-gradient-to-r from-cyan-300 via-teal-300 to-lime-300 bg-clip-text text-transparent"
+                >Built for teams of every scale.</span
+              >
+            </h1>
+            <p class="mt-5 max-w-xl text-lg text-slate-600 dark:text-slate-400">
+              Wabantu Technologies offer software solutions in both; web, desktop, and mobile applications at the top notch level.
+              <br>We also provide digital advice to fancy your enterprise in this brave new world of technology.<br>
+
+              <!-- Wabantu Technologies builds tailored software solutions—web applications, mobile apps, and professional
+              websites—for small businesses and enterprises that need clarity, speed, and a partner who ships. -->
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="#demo"
+                class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-base font-semibold text-brand-navy shadow-glow transition hover:brightness-110 wt-focus wt-btn-shine"
+                >Request a Demo</a
+              >
+              <a
+                href="#contact"
+                class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 shadow-sm backdrop-blur transition hover:border-cyan-400/50 hover:bg-slate-50 dark:border-slate-500/70 dark:bg-white/5 dark:text-white dark:shadow-none dark:hover:bg-white/10 wt-focus"
+                >Contact Us</a
+              >
+              <a
+                href="#solutions"
+                class="inline-flex items-center justify-center rounded-xl px-4 py-3 text-base font-semibold text-cyan-700 underline-offset-4 hover:underline dark:text-cyan-200 wt-focus"
+                >Explore Solutions</a
+              >
+            </div>
+            <dl class="mt-10 grid grid-cols-2 gap-4 sm:max-w-md sm:grid-cols-3">
+              <div class="rounded-xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/40 dark:shadow-none p-4">
+                <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">What we build</dt>
+                <dd class="mt-1 font-display text-lg font-semibold text-slate-900 dark:text-white">Custom software</dd>
+              </div>
+              <div class="rounded-xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/40 dark:shadow-none p-4">
+                <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Who we serve</dt>
+                <dd class="mt-1 font-display text-lg font-semibold text-slate-900 dark:text-white">Small and Medium-sized Business (SMB) to Enterprise</dd>
+              </div>
+              <div class="col-span-2 rounded-xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/40 dark:shadow-none p-4 sm:col-span-1">
+                <dt class="text-xs font-medium uppercase tracking-wide text-slate-500">Also</dt>
+                <dd class="mt-1 font-display text-lg font-semibold text-slate-900 dark:text-white">Web &amp; mobile apps</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="relative lg:col-span-6">
+            <h2 class="mb-4 text-center font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+              Our Products
+            </h2>
+            <div
+              class="wt-float wt-carousel-shell relative mx-auto w-full max-w-xl lg:ml-auto"
+              data-wt-carousel
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Featured product solutions"
+              tabindex="0"
+            >
+              <p id="wt-carousel-status" class="sr-only" aria-live="polite"></p>
+              <div class="flex items-stretch gap-2 sm:gap-3">
+                <button
+                  type="button"
+                  id="wt-carousel-prev"
+                  class="wt-carousel-arrow inline-flex h-11 w-11 shrink-0 items-center justify-center self-center rounded-xl border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:border-cyan-400/50 hover:text-cyan-800 dark:border-slate-600/70 dark:bg-white/5 dark:text-slate-200 dark:hover:border-cyan-400/40 wt-focus"
+                  aria-label="Previous product"
+                >
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <div class="wt-carousel-viewport min-w-0 flex-1">
+                  <article
+                    class="wt-carousel-card wt-carousel-card--side wt-focus rounded-2xl outline-none"
+                    data-wt-carousel-slot="prev"
+                    role="button"
+                    tabindex="0"
+                  ></article>
+                  <article
+                    class="wt-carousel-card wt-carousel-card--active rounded-2xl"
+                    data-wt-carousel-slot="active"
+                    aria-live="polite"
+                  ></article>
+                  <article
+                    class="wt-carousel-card wt-carousel-card--side wt-focus rounded-2xl outline-none"
+                    data-wt-carousel-slot="next"
+                    role="button"
+                    tabindex="0"
+                  ></article>
+                </div>
+                <button
+                  type="button"
+                  id="wt-carousel-next"
+                  class="wt-carousel-arrow inline-flex h-11 w-11 shrink-0 items-center justify-center self-center rounded-xl border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:border-cyan-400/50 hover:text-cyan-800 dark:border-slate-600/70 dark:bg-white/5 dark:text-slate-200 dark:hover:border-cyan-400/40 wt-focus"
+                  aria-label="Next product"
+                >
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+              <div
+                id="wt-carousel-dots"
+                class="mt-5 flex flex-wrap items-center justify-center gap-2"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <div
+              class="pointer-events-none absolute -right-2 bottom-4 hidden rounded-xl border border-orange-500/20 bg-orange-500/10 p-3 shadow-xl sm:block"
+              aria-hidden="true"
+            >
+              <p class="text-[10px] font-semibold uppercase tracking-wider text-orange-800 dark:text-orange-200/90">Security-minded UX</p>
+              <p class="mt-1 text-xs text-orange-900/90 dark:text-orange-50/90">Audit-friendly workflows</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="border-t border-slate-200 dark:border-slate-800/80 bg-slate-100/90 dark:bg-brand-slate/40 py-16 sm:py-20 lg:py-24" aria-labelledby="about-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-5">
+              <h2 id="about-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                Software engineered for real businesses
+              </h2>
+              <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+                Wabantu Technologies is a software partner for organizations that want custom-built systems, modern web and
+                mobile experiences, and websites that earn trust without sacrificing governance or usability.
+              </p>
+            </div>
+            <div class="lg:col-span-7">
+              <div class="space-y-6 text-slate-600 dark:text-slate-300">
+                <p>
+                  We help teams replacing traditional processes with
+                  dependable softwares, and sites that stay maintainable as you grow.
+                </p>
+                <p>
+                  We also deliver <strong class="font-semibold text-slate-900 dark:text-white">Tailored digital solutions</strong>,
+                  integrations with other softwares, and
+                  automation using modern cutting edge technology.
+                </p>
+              </div>
+              <div
+                class="mt-10 grid gap-4 sm:grid-cols-2"
+                role="list"
+                aria-label="Company value pillars"
+              >
+                <div
+                  class="rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/60 p-6 transition hover:border-cyan-500/30 hover:shadow-lg"
+                  role="listitem"
+                >
+                  <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Innovation with discipline</h3>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                    Modern stacks, clean architecture, and pragmatic delivery, so upgrades stay smooth and costs stay
+                    predictable.
+                  </p>
+                </div>
+                <div
+                  class="rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/60 p-6 transition hover:border-cyan-500/30 hover:shadow-lg"
+                  role="listitem"
+                >
+                  <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Reliability at the core</h3>
+                  <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                    Systems designed for real-world load, operational continuity, and various cases businesses
+                    encounter daily.
+                  </p>
+                </div>
+              </div>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#solutions"
+                  class="rounded-xl border border-slate-300 px-5 dark:border-slate-600 py-2.5 text-sm font-semibold text-slate-900 dark:text-white hover:border-cyan-400/50 wt-focus"
+                  >View solutions</a
+                >
+                <a
+                  href="#demo"
+                  class="rounded-xl bg-cyan-500/15 px-5 py-2.5 text-sm font-semibold text-cyan-900 ring-1 ring-cyan-500/30 hover:bg-cyan-500/25 dark:text-cyan-200 wt-focus"
+                  >Book a walkthrough</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="border-t border-slate-200 dark:border-slate-800/80 py-16 sm:py-20 lg:py-24" aria-labelledby="services-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal max-w-3xl">
+            <h2 id="services-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              What we deliver
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              End-to-end capabilities for organizations that need software that fits and not generic templates forced into
+              your workflow.
+            </p>
+          </div>
+          <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" role="list">
+            <li class="wt-reveal rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/50 p-6 shadow-sm">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-700 ring-1 ring-cyan-500/30 dark:text-cyan-200" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Custom software development</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                We build software according to each client operation model and goals, with delivery focused on speed, quality, and long-term maintainability.
+              </p>
+            </li>
+            <li class="wt-reveal rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/50 p-6 shadow-sm">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal-500/15 text-teal-700 ring-1 ring-teal-500/30 dark:text-teal-200" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <rect x="4" y="5" width="16" height="12" rx="2" stroke-width="1.6"></rect>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 20h8M12 17v3" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Web application development</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Secure and responsive web apps, dashboards, and portals that fit your daily business workflows and scale with your teams.
+              </p>
+            </li>
+            <li class="wt-reveal rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/50 p-6 shadow-sm">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-500/15 text-sky-700 ring-1 ring-sky-500/30 dark:text-sky-200" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <rect x="8" y="3.5" width="8" height="17" rx="2.2" stroke-width="1.6"></rect>
+                  <circle cx="12" cy="17.3" r="0.8" fill="currentColor" stroke="none"></circle>
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Mobile application development</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Scalable mobile applications that prioritize smooth user experience, performance, and robust architecture.
+              </p>
+            </li>
+            <li class="wt-reveal rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/50 p-6 shadow-sm">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15 text-violet-700 ring-1 ring-violet-500/30 dark:text-violet-200" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="12" cy="12" r="9" stroke-width="1.6"></circle>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M3 12h18M12 3a14.5 14.5 0 014.2 9A14.5 14.5 0 0112 21a14.5 14.5 0 01-4.2-9A14.5 14.5 0 0112 3z" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Website design &amp; development</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Professional business websites that are fast, accessible, and structured to convert visitors into business conversations.
+              </p>
+            </li>
+            <li class="wt-reveal rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white dark:bg-brand-navy/50 p-6 shadow-sm sm:col-span-2 lg:col-span-2">
+              <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-lime-500/15 text-lime-700 ring-1 ring-lime-500/30 dark:text-lime-200" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 17l5-5 4 4 7-8" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M16 8h4v4" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Small business through enterprise</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Engagement models sized to your stage, from growing businesses to enterprise programs with complex stakeholders.
+              </p>
+            </li>
+          </ul>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="#solutions" class="rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-5 py-2.5 text-sm font-semibold text-brand-navy shadow-glow hover:brightness-110 wt-focus wt-btn-shine"
+              >Browse solutions</a
+            >
+            <a href="#contact" class="rounded-xl border border-slate-300 px-5 dark:border-slate-600 py-2.5 text-sm font-semibold text-slate-900 dark:text-white hover:border-cyan-400/50 wt-focus"
+              >Book a consultation</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Solutions -->
+      <section id="solutions" class="py-16 sm:py-20 lg:py-24" aria-labelledby="solutions-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal max-w-3xl">
+            <h2 id="solutions-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              Solution portfolio
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Ready-to-tailor products across retail, education, healthcare, hospitality, and more—each designed for
+              clear adoption and operational impact.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <!-- Fantasy League -->
+            <article
+              class="wt-reveal group flex flex-col rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-500/35 hover:shadow-xl"
+            >
+            <div
+            class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-cyan-500/20 ring-1 ring-slate-900/10 dark:ring-white/10"
+            aria-hidden="true"
+          >
+            <svg class="h-6 w-6 text-cyan-700 dark:text-cyan-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke-width="1.6"></circle>
+              <polygon points="12,7.4 14.1,8.9 13.3,11.3 10.7,11.3 9.9,8.9" stroke-width="1.6" stroke-linejoin="round"></polygon>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9.9 8.9L7.5 10.3l.7 2.6 2.5 1.8" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M14.1 8.9l2.4 1.4-.7 2.6-2.5 1.8" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10.7 14.5h2.6" />
+            </svg>
+          </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">Fantasy League Software</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                End-to-end tooling for leagues, drafts, scoring, and fan engagement—built for operators who need
+                control and clarity.
+              </p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Ideal for</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">League operators, sports communities, media partners</p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Key benefits</p>
+              <ul class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>Configurable rulesets and season structures</li>
+                <li>Role-based administration</li>
+                <li>Scalable match-day operations</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <a href="products/fantasy-league-software.html" class="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-brand-navy wt-focus"
+                  >View Details</a
+                >
+                <a href="#demo" class="rounded-lg border border-slate-300 px-4 dark:border-slate-600 py-2 text-sm font-semibold text-slate-900 dark:text-white hover:border-cyan-400/50 wt-focus"
+                  >Request Demo</a
+                >
+              </div>
+            </article>
+            <!-- Duka Langu -->
+            <article
+              class="wt-reveal group flex flex-col rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-500/35 hover:shadow-xl"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-lime-500/20 to-teal-500/20 ring-1 ring-slate-900/10 dark:ring-white/10"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6 text-lime-700 dark:text-lime-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 10l1-4h13l1 4M6 10v8h12v-8" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 18v-3h6v3" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">Duka Langu</h3>
+              <p class="mt-1 text-sm font-medium text-teal-700 dark:text-teal-200/90">Retail · shops, pharmacies &amp; supermarkets</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                An application for shops, pharmacies, supermarkets, and similar retail platforms—POS, inventory, and
+                day-to-day shop operations in one flow.
+              </p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Ideal for</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Retail stores, distributors, multi-branch operators</p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Key benefits</p>
+              <ul class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>Inventory visibility across locations</li>
+                <li>Sales performance insights</li>
+                <li>Streamlined day-end processes</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <a href="products/duka-langu.html" class="rounded-lg bg-teal-500 px-4 py-2 text-sm font-semibold text-brand-navy wt-focus"
+                  >Learn More</a
+                >
+                <a href="https://github.com/joshuu10/Duka-Langu" rel="noopener noreferrer" target="_blank" class="rounded-lg border border-slate-300 px-4 dark:border-slate-600 py-2 text-sm font-semibold text-slate-900 dark:text-white hover:border-teal-400/50 wt-focus"
+                  >Repository</a
+                >
+              </div>
+            </article>
+
+            <!-- School -->
+            <article
+              class="wt-reveal group flex flex-col rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-cyan-500/35 hover:shadow-xl"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500/20 to-indigo-500/20 ring-1 ring-slate-900/10 dark:ring-white/10"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6 text-sky-700 dark:text-sky-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 14l9-5-9-5-9 5 9 5z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">School Management Software</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Academic records, admissions workflows, communication, and finance modules—structured for administrators,
+                teachers, and families.
+              </p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Ideal for</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Schools, colleges, training institutions</p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Key benefits</p>
+              <ul class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>Centralized student information</li>
+                <li>Operational reporting for leadership</li>
+                <li>Reduced administrative overhead</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <a href="products/school-management-software.html" class="rounded-lg bg-cyan-500 px-4 py-2 text-sm font-semibold text-brand-navy wt-focus"
+                  >View Details</a
+                >
+                <a href="#demo" class="rounded-lg border border-slate-300 px-4 dark:border-slate-600 py-2 text-sm font-semibold text-slate-900 dark:text-white hover:border-cyan-400/50 wt-focus"
+                  >Request Demo</a
+                >
+              </div>
+            </article>
+
+            <!-- Hospital -->
+            <article
+              class="wt-reveal group flex flex-col rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-500/35 hover:shadow-xl"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 ring-1 ring-slate-900/10 dark:ring-white/10"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6 text-emerald-700 dark:text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 20h14" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.5 20V6.5A1.5 1.5 0 018 5h8a1.5 1.5 0 011.5 1.5V20" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.5 9h3M12 7.5v3" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.5 13h5M9.5 16h5" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">Hospital Management Software</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Patient flow, departments, billing hooks, and operational dashboards—designed for clinical and admin
+                teams working under pressure.
+              </p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Ideal for</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Hospitals, clinics, diagnostic centers</p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Key benefits</p>
+              <ul class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>Clear operational visibility</li>
+                <li>Configurable department workflows</li>
+                <li>User-friendly interfaces for busy staff</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <a href="products/hospital-management-software.html" class="rounded-lg bg-teal-500 px-4 py-2 text-sm font-semibold text-brand-navy wt-focus"
+                  >Preview Solution</a
+                >
+                <a href="#demo" class="rounded-lg border border-slate-300 px-4 dark:border-slate-600 py-2 text-sm font-semibold text-slate-900 dark:text-white hover:border-teal-400/50 wt-focus"
+                  >Request Demo</a
+                >
+              </div>
+            </article>
+
+            <!-- Hotel -->
+            <article
+              class="wt-reveal group flex flex-col rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-orange-500/30 hover:shadow-xl dark:bg-slate-900/35 dark:shadow-none"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500/20 to-amber-500/15 ring-1 ring-slate-900/10 dark:ring-white/10"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6 text-orange-700 dark:text-orange-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 20h16" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20V6h10v14" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 9h.01M14 9h.01M10 12h.01M14 12h.01M10 15h.01M14 15h.01" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">Hotel Management System</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                A system to manage hotel processes and personnel—front desk, housekeeping, and staff coordination in one
+                operational stack.
+              </p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Ideal for</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Hotels, lodges, hospitality groups</p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Key benefits</p>
+              <ul class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>Unified guest journey visibility</li>
+                <li>Staff coordination across shifts</li>
+                <li>Operational reporting for management</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <a
+                  href="products/hotel-management-system.html"
+                  class="rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-2 text-sm font-semibold text-brand-navy wt-focus"
+                  >View Details</a
+                >
+                <a href="https://github.com/joshuu10/Hotel-Management-System" rel="noopener noreferrer" target="_blank" class="rounded-lg border border-slate-300 px-4 dark:border-slate-600 py-2 text-sm font-semibold text-slate-900 dark:text-white hover:border-orange-400/50 wt-focus"
+                  >Repository</a
+                >
+              </div>
+            </article>
+
+            <!-- Fuel -->
+            <article
+              class="wt-reveal group flex flex-col rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-lime-500/35 hover:shadow-xl"
+            >
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-lime-500/15 to-cyan-500/15 ring-1 ring-slate-900/10 dark:ring-white/10"
+                aria-hidden="true"
+              >
+                <svg class="h-6 w-6 text-lime-700 dark:text-lime-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 4h8v16H6z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 7h2.2A1.8 1.8 0 0118 8.8V16a2 2 0 002 2h1" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.5 8h3M8.5 11h3M8.5 14h3M17 10v4" />
+                </svg>
+              </div>
+              <h3 class="mt-5 font-display text-xl font-semibold text-slate-900 dark:text-white">Fuel Utilization System</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Monitoring, allocation insights, and operational controls for fleets and fuel-intensive environments—so
+                usage stays accountable.
+              </p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Ideal for</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Fleet operators, logistics, industrial sites</p>
+              <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">Key benefits</p>
+              <ul class="mt-2 list-inside list-disc space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                <li>Stronger utilization visibility</li>
+                <li>Operational controls for accountability</li>
+                <li>Reporting aligned to management needs</li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <a href="products/fuel-utilization-system.html" class="rounded-lg bg-lime-500 px-4 py-2 text-sm font-semibold text-brand-navy wt-focus"
+                  >Learn More</a
+                >
+                <a href="#demo" class="rounded-lg border border-slate-300 px-4 dark:border-slate-600 py-2 text-sm font-semibold text-slate-900 dark:text-white hover:border-lime-400/50 wt-focus"
+                  >Request Demo</a
+                >
+              </div>
+            </article>
+
+            <!-- Custom -->
+            <article
+              class="wt-reveal group relative flex flex-col overflow-hidden rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 via-white to-teal-500/10 p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-glow dark:via-brand-navy md:col-span-2 xl:col-span-3"
+            >
+              <div class="absolute inset-0 opacity-30" aria-hidden="true">
+                <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-400/20 blur-3xl"></div>
+                <div class="absolute -bottom-10 left-10 h-40 w-40 rounded-full bg-teal-400/20 blur-3xl"></div>
+              </div>
+              <div class="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                <div class="max-w-3xl">
+                  <div class="flex items-center gap-3">
+                    <span
+                      class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900/5 ring-1 ring-slate-900/10 dark:bg-white/10 dark:ring-white/15"
+                      aria-hidden="true"
+                    >
+                      <svg class="h-6 w-6 text-cyan-700 dark:text-cyan-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <h3 class="font-display text-2xl font-semibold text-slate-900 dark:text-white">Custom Software Development</h3>
+                      <p class="text-sm text-cyan-900 dark:text-cyan-100/80">
+                        Web apps, mobile apps, and bespoke platforms when off-the-shelf products are not enough.
+                      </p>
+                    </div>
+                  </div>
+                  <p class="mt-4 text-sm text-slate-700 dark:text-slate-200/90">
+                    We build tailored web and mobile applications, management systems, customer portals, internal tools,
+                    automation, integrations, and analytics—designed around your workflows and stakeholders.
+                  </p>
+                  <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300/80">Ideal for</p>
+                  <p class="text-sm text-slate-700 dark:text-slate-100/90">
+                    Enterprises, growing companies, and teams with specialized processes or compliance requirements
+                  </p>
+                </div>
+                <div class="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col">
+                  <a
+                    href="#custom-software"
+                    class="inline-flex justify-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm hover:bg-slate-50 dark:border-white/20 dark:bg-white/5 dark:text-white dark:shadow-none dark:hover:bg-white/10 wt-focus"
+                    >Explore custom builds</a
+                  >
+                  <a
+                    href="#contact"
+                    class="inline-flex justify-center rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-5 py-3 text-sm font-semibold text-brand-navy wt-focus wt-btn-shine"
+                    >Request Custom Software</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why choose us -->
+      <section id="why-us" class="border-t border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-brand-slate/30 py-16 sm:py-20 lg:py-24" aria-labelledby="why-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal mx-auto max-w-3xl text-center">
+            <h2 id="why-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              Why organizations choose Wabantu
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Engineering discipline, clear communication, and delivery that matches how your business actually runs.
+            </p>
+          </div>
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-700 ring-1 ring-cyan-500/30 dark:text-cyan-200" aria-hidden="true">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 8h16M4 12h10M4 16h7M15 14l2 2 3-3" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Tailored business solutions</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                We align modules, permissions, and workflows to how your organization actually operates.
+              </p>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-500/15 text-teal-700 ring-1 ring-teal-500/30 dark:text-teal-200" aria-hidden="true">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 12h16M12 4v16M7 7h10v10H7z" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Scalable, reliable systems</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Architecture and delivery practices aimed at stability as usage grows and teams expand.
+              </p>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/15 text-sky-700 ring-1 ring-sky-500/30 dark:text-sky-200" aria-hidden="true">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 3l8 4v5c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V7l8-4z" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Industry-specific expertise</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Depth across retail, education, healthcare, hospitality, and specialized operations—plus custom web and
+                mobile work when you need it.
+              </p>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/15 text-violet-700 ring-1 ring-violet-500/30 dark:text-violet-200" aria-hidden="true">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 5h8v4H8zM5 11h14v4H5zM8 17h8v2H8z" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Modern technology stack</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Maintainable codebases, pragmatic tooling, and interfaces that feel current—not dated.
+              </p>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-500/15 text-lime-700 ring-1 ring-lime-500/30 dark:text-lime-200" aria-hidden="true">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8.5 12a2.5 2.5 0 115 0m-9 2.5h5m5 0h5M8 7l2 2m6-2l-2 2" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Supportive partnership</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Collaborative delivery, clear communication, and a long-term mindset beyond go-live.
+              </p>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/15 text-orange-700 ring-1 ring-orange-500/30 dark:text-orange-200" aria-hidden="true">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <rect x="5" y="11" width="14" height="9" rx="2" stroke-width="1.6"></rect>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8 11V8a4 4 0 118 0v3" />
+                </svg>
+              </span>
+              <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Secure, user-friendly platforms</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Strong usability for everyday staff, with sensible controls for administrators and leadership.
+              </p>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6 sm:col-span-2 lg:col-span-3">
+              <div class="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
+                <div>
+                  <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-700 ring-1 ring-cyan-500/30 dark:text-cyan-200" aria-hidden="true">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </span>
+                  <h3 class="mt-4 font-display text-lg font-semibold text-slate-900 dark:text-white">Custom development capability</h3>
+                  <p class="mt-2 max-w-3xl text-sm text-slate-600 dark:text-slate-400">
+                    When your requirements are unique, we engineer bespoke software with the same quality bar as our
+                    product suite—integrations, automation, portals, and internal tools included.
+                  </p>
+                </div>
+                <a
+                  href="#demo"
+                  class="shrink-0 rounded-xl bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-900 dark:text-white ring-1 ring-white/15 hover:bg-white/15 wt-focus"
+                  >Talk to sales</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Custom software -->
+      <section id="custom-software" class="py-16 sm:py-20 lg:py-24" aria-labelledby="custom-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2 id="custom-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                Custom software, web apps, and mobile—built around your reality
+              </h2>
+              <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+                From workflow automation to full management systems and customer-facing apps, we craft software that
+                matches your processes, integrations, and stakeholder expectations.
+              </p>
+              <ul class="mt-8 space-y-4 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-cyan-400" aria-hidden="true"></span>
+                  <span><strong class="text-slate-900 dark:text-white">Workflow automation</strong> to remove repetitive manual steps.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-teal-400" aria-hidden="true"></span>
+                  <span
+                    ><strong class="text-slate-900 dark:text-white">Management systems &amp; portals</strong> for staff, partners, and
+                    customers.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-lime-400" aria-hidden="true"></span>
+                  <span
+                    ><strong class="text-slate-900 dark:text-white">Dashboards &amp; internal tools</strong> for leadership visibility and
+                    team productivity.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-orange-400" aria-hidden="true"></span>
+                  <span
+                    ><strong class="text-slate-900 dark:text-white">Integrations</strong> across your existing stack—APIs, imports, and
+                    event-driven updates.</span
+                  >
+                </li>
+              </ul>
+              <div class="mt-10 flex flex-wrap gap-3">
+                <a
+                  href="#contact"
+                  class="rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-base font-semibold text-brand-navy shadow-glow hover:brightness-110 wt-focus wt-btn-shine"
+                  >Request Custom Software</a
+                >
+                <a href="#process" class="rounded-xl border border-slate-300 px-6 dark:border-slate-600 py-3 text-base font-semibold text-slate-900 dark:text-white hover:border-cyan-400/50 wt-focus"
+                  >See how delivery works</a
+                >
+              </div>
+            </div>
+            <div class="wt-reveal relative">
+              <div class="rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/40 dark:shadow-none p-6 ring-1 ring-slate-900/[0.06] dark:ring-white/5">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Example engagement shapes</p>
+                <div class="mt-5 space-y-4">
+                  <div class="rounded-xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/60 p-4">
+                    <p class="font-display text-sm font-semibold text-slate-900 dark:text-white">Operational command center</p>
+                    <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">KPIs, alerts, approvals—tailored to your governance model.</p>
+                  </div>
+                  <div class="rounded-xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/60 p-4">
+                    <p class="font-display text-sm font-semibold text-slate-900 dark:text-white">Customer &amp; partner portal</p>
+                    <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Self-service workflows with branded experience.</p>
+                  </div>
+                  <div class="rounded-xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/60 p-4">
+                    <p class="font-display text-sm font-semibold text-slate-900 dark:text-white">Automation &amp; integrations layer</p>
+                    <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Connect systems without forcing a rip-and-replace.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="process" class="border-t border-slate-200 dark:border-slate-800/80 bg-slate-50/90 dark:bg-brand-slate/25 py-16 sm:py-20 lg:py-24" aria-labelledby="process-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal max-w-3xl">
+            <h2 id="process-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              How it works
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              A clear path from first conversation to confident adoption—whether you’re buying a product or commissioning
+              custom software.
+            </p>
+          </div>
+          <ol class="mt-12 grid gap-6 lg:grid-cols-4">
+            <li class="wt-reveal relative rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45 p-6">
+              <span class="font-display text-sm font-bold text-cyan-700 dark:text-cyan-300">01</span>
+              <h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Consultation</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                We align on goals, constraints, stakeholders, and success criteria—fast and focused.
+              </p>
+            </li>
+            <li class="wt-reveal relative rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45 p-6">
+              <span class="font-display text-sm font-bold text-teal-700 dark:text-teal-300">02</span>
+              <h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Requirements analysis</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                We translate operational reality into a clear scope: modules, integrations, roles, and rollout plan.
+              </p>
+            </li>
+            <li class="wt-reveal relative rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45 p-6">
+              <span class="font-display text-sm font-bold text-lime-700 dark:text-lime-300">03</span>
+              <h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Development / configuration</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Iterative build and configuration with checkpoints—so surprises don’t show up late.
+              </p>
+            </li>
+            <li class="wt-reveal relative rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45 p-6">
+              <span class="font-display text-sm font-bold text-orange-700 dark:text-orange-200">04</span>
+              <h3 class="mt-3 font-display text-lg font-semibold text-slate-900 dark:text-white">Deployment &amp; support</h3>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Go-live support, training guidance, and a partnership approach as you scale usage.
+              </p>
+            </li>
+          </ol>
+          <div class="mt-10 flex flex-wrap gap-3">
+            <a href="#demo" class="rounded-xl bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-brand-navy wt-focus"
+              >Start with a demo</a
+            >
+            <a
+              href="#contact"
+              class="rounded-xl border border-slate-300 px-5 dark:border-slate-600 py-2.5 text-sm font-semibold text-slate-900 dark:text-white hover:border-cyan-400/50 wt-focus"
+              >Speak to our team</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Demo form -->
+      <section id="demo" class="py-16 sm:py-20 lg:py-24" aria-labelledby="demo-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal grid gap-10 lg:grid-cols-12 lg:items-start">
+            <div class="lg:col-span-5">
+              <h2 id="demo-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                Request a demo or consultation
+              </h2>
+              <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+                Share what you are evaluating—product walkthrough, custom software, or a website project—and we will
+                follow up with next steps.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400" aria-hidden="true">✓</span> Product deep-dives</li>
+                <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400" aria-hidden="true">✓</span> Custom solution scoping</li>
+                <li class="flex gap-2"><span class="text-cyan-600 dark:text-cyan-400" aria-hidden="true">✓</span> Partnership discussions</li>
+              </ul>
+            </div>
+            <div class="lg:col-span-7">
+              <div
+                id="demo-success"
+                tabindex="-1"
+                hidden
+                class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-100"
+              >
+                <p class="font-display text-lg font-semibold text-emerald-950 dark:text-white">Thank you—your demo request is ready to send.</p>
+                <p class="mt-2 text-sm text-emerald-900/90 dark:text-emerald-100/90">
+                  This is a front-end demonstration: connect the form to your CRM or email endpoint to deliver requests
+                  to your team.
+                </p>
+                <button
+                  type="button"
+                  id="demo-reset"
+                  class="mt-6 rounded-lg bg-emerald-900/10 px-4 py-2 text-sm font-semibold text-emerald-950 hover:bg-emerald-900/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/15 wt-focus"
+                >
+                  Submit another request
+                </button>
+              </div>
+
+              <form
+                id="demo-form"
+                class="rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/40 dark:shadow-none p-6 sm:p-8 ring-1 ring-slate-900/[0.06] dark:ring-white/5"
+                novalidate
+              >
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div class="sm:col-span-1">
+                    <label for="demo_name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Full name</label>
+                    <input
+                      id="demo_name"
+                      name="demo_name"
+                      autocomplete="name"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                      placeholder="eg. Juma Mshamu"
+                    />
+                    <p class="wt-field-error" data-error-for="demo_name" hidden></p>
+                  </div>
+                  <div class="sm:col-span-1">
+                    <label for="demo_company" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Company / organization</label>
+                    <input
+                      id="demo_company"
+                      name="demo_company"
+                      autocomplete="organization"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                      placeholder="Your organization"
+                    />
+                    <p class="wt-field-error" data-error-for="demo_company" hidden></p>
+                  </div>
+                  <div class="sm:col-span-1">
+                    <label for="demo_email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Work email</label>
+                    <input
+                      id="demo_email"
+                      name="demo_email"
+                      type="email"
+                      autocomplete="email"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                      placeholder="name@company.com"
+                    />
+                    <p class="wt-field-error" data-error-for="demo_email" hidden></p>
+                  </div>
+                  <div class="sm:col-span-1">
+                    <label for="demo_phone" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Phone <span class="text-slate-500">(optional)</span></label>
+                    <input
+                      id="demo_phone"
+                      name="demo_phone"
+                      type="tel"
+                      autocomplete="tel"
+                      class="mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                      placeholder="+(255) 000-0000"
+                    />
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="demo_product" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Interested product / solution</label>
+                    <select
+                      id="demo_product"
+                      name="demo_product"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                    >
+                      <option value="">Select an option</option>
+                      <option>Fantasy League Software</option>
+                      <option>Duka Langu (Retail / Shop Management)</option>
+                      <option>School Management Software</option>
+                      <option>Hospital Management Software</option>
+                      <option>Hotel Management System</option>
+                      <option>Fuel Utilization System</option>
+                      <option>Custom Software Development</option>
+                      <option>Partnership / Reseller</option>
+                      <option>Website design &amp; development</option>
+                      <option>General inquiry</option>
+                    </select>
+                    <p class="wt-field-error" data-error-for="demo_product" hidden></p>
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="demo_message" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Message</label>
+                    <textarea
+                      id="demo_message"
+                      name="demo_message"
+                      rows="4"
+                      class="mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                      placeholder="What outcomes are you trying to achieve? Any timelines or constraints?"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="mt-6 flex flex-wrap items-center gap-3">
+                  <button
+                    type="submit"
+                    class="rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-semibold text-brand-navy shadow-glow hover:brightness-110 wt-focus wt-btn-shine"
+                  >
+                    Submit demo request
+                  </button>
+                  <button
+                    type="reset"
+                    class="rounded-xl border border-slate-300 px-5 dark:border-slate-600 py-3 text-sm font-semibold text-slate-800 hover:border-slate-400 dark:text-slate-200 dark:hover:border-slate-500 wt-focus"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <p class="mt-4 text-xs text-slate-500">
+                  By submitting, you agree to be contacted about your request. Replace this note with your privacy policy
+                  link when available.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partners -->
+      <section id="partners" class="border-t border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-brand-slate/30 py-16 sm:py-20 lg:py-24" aria-labelledby="partners-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal max-w-3xl">
+            <h2 id="partners-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+              Partnerships &amp; resellers
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+              Grow with us—whether you integrate technology, bring distribution reach, or serve customers locally with
+              Wabantu-powered solutions.
+            </p>
+          </div>
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Technology partners</h3>
+              <div class="mt-4 flex justify-center">
+                <img
+                  src="assets/img/Patnership/Technology%20partners.png"
+                  alt="Technology partners visual"
+                  class="wt-partner-image"
+                  loading="lazy"
+                />
+              </div>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Complementary platforms, integration opportunities, and joint solution paths for shared customers.
+              </p>
+              <a
+                href="#contact"
+                data-contact-topic="partnership"
+                class="mt-5 inline-flex rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-white ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/10 wt-focus"
+                >Become a Partner</a
+              >
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Business partners</h3>
+              <div class="mt-4 flex justify-center">
+                <img
+                  src="assets/img/Patnership/Business%20partners.png"
+                  alt="Business partners visual"
+                  class="wt-partner-image"
+                  loading="lazy"
+                />
+              </div>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Strategic collaborations that expand reach while keeping customer outcomes and delivery quality high.
+              </p>
+              <a
+                href="#contact"
+                data-contact-topic="partnership"
+                class="mt-5 inline-flex rounded-lg bg-white/5 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-white ring-1 ring-slate-900/10 dark:ring-white/10 hover:bg-white/10 wt-focus"
+                >Discuss collaboration</a
+              >
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-brand-navy/50 p-6">
+              <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Resellers</h3>
+              <div class="mt-4 flex justify-center">
+                <img
+                  src="assets/img/Patnership/Resellers.png"
+                  alt="Resellers visual"
+                  class="wt-partner-image"
+                  loading="lazy"
+                />
+              </div>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                Serve organizations in your region with a proven software portfolio and a structured onboarding path.
+              </p>
+              <a
+                href="#contact"
+                data-contact-topic="reseller"
+                class="mt-5 inline-flex rounded-lg bg-gradient-to-r from-cyan-500/90 to-teal-500/90 px-4 py-2 text-sm font-semibold text-brand-navy hover:brightness-110 wt-focus"
+                >Apply as a Reseller</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials: PLACEHOLDER copy only — fictional names/companies for layout demonstration; replace with real stories when available -->
+      <section id="testimonials" class="py-16 sm:py-20 lg:py-24" aria-labelledby="testimonials-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+            <div>
+              <h2 id="testimonials-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                Trusted by teams who expect quality
+              </h2>
+              <p class="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">
+                <!-- Placeholder testimonials below: not real client statements; swap with verified quotes when available. -->
+                Organizations choose partners who ship calmly, communicate clearly, and build software that holds up in
+                production.
+              </p>
+            </div>
+            <p class="text-sm font-medium text-slate-500">Placeholder stories for layout</p>
+          </div>
+          <div class="mt-10 grid gap-6 lg:grid-cols-3">
+            <figure class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6">
+              <blockquote class="text-sm text-slate-600 dark:text-slate-300">
+                <p>
+                  “We needed a disciplined delivery partner. The walkthrough was sharp, the scope was realistic, and the
+                  platform felt enterprise-ready.”
+                </p>
+              </blockquote>
+              <figcaption class="mt-4 text-sm text-slate-500">
+                <span class="font-semibold text-slate-700 dark:text-slate-300">Placeholder — A. Mensah</span><br />
+                <span>Operations Director, Example Retail Group (fictional)</span>
+              </figcaption>
+            </figure>
+            <figure class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6">
+              <blockquote class="text-sm text-slate-600 dark:text-slate-300">
+                <p>
+                  “The UI is clean enough for frontline staff and robust enough for admins. That balance is harder than it
+                  looks.”
+                </p>
+              </blockquote>
+              <figcaption class="mt-4 text-sm text-slate-500">
+                <span class="font-semibold text-slate-700 dark:text-slate-300">Placeholder — L. Okonkwo</span><br />
+                <span>IT Manager, Example Institution (fictional)</span>
+              </figcaption>
+            </figure>
+            <figure class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6">
+              <blockquote class="text-sm text-slate-600 dark:text-slate-300">
+                <p>
+                  “Custom workflows were non-negotiable for us. The team translated messy requirements into something we
+                  could actually run day to day.”
+                </p>
+              </blockquote>
+              <figcaption class="mt-4 text-sm text-slate-500">
+                <span class="font-semibold text-slate-700 dark:text-slate-300">Placeholder — R. Naidoo</span><br />
+                <span>Program Lead, Example Logistics Co. (fictional)</span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="mt-10 rounded-2xl border border-slate-200 dark:border-slate-700/60 bg-slate-100 dark:bg-brand-navy/40 p-6 sm:flex sm:items-center sm:justify-between">
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              <span class="font-semibold text-slate-900 dark:text-white">Trusted by growing businesses</span>
+              across retail, education, healthcare, hospitality, and specialized operations—without inventing named client
+              endorsements here.
+            </p>
+            <a href="#demo" class="mt-4 inline-flex shrink-0 rounded-xl bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-brand-navy sm:mt-0 wt-focus"
+              >Request a demo</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="border-t border-slate-200 dark:border-slate-800/80 bg-slate-50/90 dark:bg-brand-slate/25 py-16 sm:py-20 lg:py-24" aria-labelledby="faq-heading">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 id="faq-heading" class="wt-reveal font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+            Frequently asked questions
+          </h2>
+          <div class="mt-8 space-y-3">
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45">
+              <button
+                type="button"
+                class="js-faq-btn flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900 dark:text-white wt-focus"
+                aria-expanded="false"
+                aria-controls="faq-panel-1"
+                id="faq-button-1"
+              >
+                What products do you offer?
+                <span class="js-faq-icon text-cyan-600 dark:text-cyan-300" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-panel-1" class="wt-faq-panel border-t border-slate-200 dark:border-slate-700/60 px-5 py-4 text-sm text-slate-600 dark:text-slate-400" role="region" aria-labelledby="faq-button-1" hidden>
+                We build custom software, web applications, and mobile applications, and we design and develop
+                professional business websites. Our solution portfolio includes Fantasy League Software, Duka Langu
+                (retail), School and Hospital Management Software, Hotel Management System, and Fuel Utilization
+                System—alongside bespoke engagements for teams from small businesses to enterprises.
+              </div>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45">
+              <button
+                type="button"
+                class="js-faq-btn flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900 dark:text-white wt-focus"
+                aria-expanded="false"
+                aria-controls="faq-panel-2"
+                id="faq-button-2"
+              >
+                Can I request a custom system?
+                <span class="js-faq-icon text-cyan-600 dark:text-cyan-300" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-panel-2" class="wt-faq-panel border-t border-slate-200 dark:border-slate-700/60 px-5 py-4 text-sm text-slate-600 dark:text-slate-400" role="region" aria-labelledby="faq-button-2" hidden>
+                Yes. We design and build bespoke software—including web apps, mobile apps, portals, automation,
+                integrations, and dashboards—scoped to your workflows. Start with the contact section or request a
+                consultation from the demo form.
+              </div>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45">
+              <button
+                type="button"
+                class="js-faq-btn flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900 dark:text-white wt-focus"
+                aria-expanded="false"
+                aria-controls="faq-panel-3"
+                id="faq-button-3"
+              >
+                How do I request a demo?
+                <span class="js-faq-icon text-cyan-600 dark:text-cyan-300" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-panel-3" class="wt-faq-panel border-t border-slate-200 dark:border-slate-700/60 px-5 py-4 text-sm text-slate-600 dark:text-slate-400" role="region" aria-labelledby="faq-button-3" hidden>
+                Use the “Request a demo” section, share your organization details and the solution you’re interested in,
+                and our team will follow up with scheduling options.
+              </div>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45">
+              <button
+                type="button"
+                class="js-faq-btn flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900 dark:text-white wt-focus"
+                aria-expanded="false"
+                aria-controls="faq-panel-4"
+                id="faq-button-4"
+              >
+                Do you support partnerships and resellers?
+                <span class="js-faq-icon text-cyan-600 dark:text-cyan-300" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-panel-4" class="wt-faq-panel border-t border-slate-200 dark:border-slate-700/60 px-5 py-4 text-sm text-slate-600 dark:text-slate-400" role="region" aria-labelledby="faq-button-4" hidden>
+                Yes. We collaborate with technology partners, business partners, and resellers. Use the partner CTAs to
+                reach our team with your collaboration goals.
+              </div>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45">
+              <button
+                type="button"
+                class="js-faq-btn flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900 dark:text-white wt-focus"
+                aria-expanded="false"
+                aria-controls="faq-panel-5"
+                id="faq-button-5"
+              >
+                Can your software be tailored to my business?
+                <span class="js-faq-icon text-cyan-600 dark:text-cyan-300" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-panel-5" class="wt-faq-panel border-t border-slate-200 dark:border-slate-700/60 px-5 py-4 text-sm text-slate-600 dark:text-slate-400" role="region" aria-labelledby="faq-button-5" hidden>
+                Absolutely. Many engagements combine product configuration with custom modules or integrations to match
+                policies, roles, and operational nuances.
+              </div>
+            </div>
+            <div class="wt-reveal rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-slate-50 dark:bg-brand-navy/45">
+              <button
+                type="button"
+                class="js-faq-btn flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-slate-900 dark:text-white wt-focus"
+                aria-expanded="false"
+                aria-controls="faq-panel-6"
+                id="faq-button-6"
+              >
+                Do you provide ongoing support?
+                <span class="js-faq-icon text-cyan-600 dark:text-cyan-300" aria-hidden="true">+</span>
+              </button>
+              <div id="faq-panel-6" class="wt-faq-panel border-t border-slate-200 dark:border-slate-700/60 px-5 py-4 text-sm text-slate-600 dark:text-slate-400" role="region" aria-labelledby="faq-button-6" hidden>
+                Yes. Support models can be aligned to your rollout and operational needs—ask during your demo or
+                consultation for options.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-16 sm:py-20 lg:py-24" aria-labelledby="contact-heading">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="wt-reveal grid gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-5">
+              <h2 id="contact-heading" class="font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+                Contact Wabantu Technologies
+              </h2>
+              <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">
+                Sales, product inquiries, custom software and websites, partnerships, and reseller applications—send a
+                message and we will route it appropriately.
+              </p>
+              <div class="mt-8 space-y-4 rounded-2xl border border-slate-200 dark:border-slate-700/70 bg-white/95 shadow-sm dark:bg-slate-900/35 dark:shadow-none p-6 text-sm text-slate-600 dark:text-slate-300">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Email</p>
+                  <p><a class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus rounded" href="mailto:info@wabantutechnologies.com">info@wabantutechnologies.com</a> <span class="text-slate-500"></span></p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Phone / Whatsapp </p>
+                  <p><a class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus rounded" href="+255 673 838 844">+255 673 838 844</a> <span class="text-slate-500"></span></p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Office</p>
+                  <p>Kimara, King'ong'o Road<br />Dar Es Salaam, Tanzania <span class="text-slate-500"></span></p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Business hours</p>
+                  <p>Mon–Fri, 8:00–17:00 <span class="text-slate-500">(UTC +3 GMT)</span></p>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Social</p>
+                  <ul class="mt-2 flex flex-wrap gap-3">
+                    <li>
+                      <a href="https://www.linkedin.com/" class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus rounded" rel="noopener noreferrer" target="_blank">LinkedIn (placeholder)</a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/" class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus rounded" rel="noopener noreferrer" target="_blank">X / Twitter (placeholder)</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-7">
+              <div
+                id="contact-success"
+                tabindex="-1"
+                hidden
+                class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6 text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-100"
+              >
+                <p class="font-display text-lg font-semibold text-emerald-950 dark:text-white">Message captured (demo).</p>
+                <p class="mt-2 text-sm text-emerald-900/90 dark:text-emerald-100/90">
+                  Wire this form to your backend or form service to deliver inquiries reliably.
+                </p>
+                <button
+                  type="button"
+                  id="contact-reset"
+                  class="mt-6 rounded-lg bg-emerald-900/10 px-4 py-2 text-sm font-semibold text-emerald-950 hover:bg-emerald-900/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/15 wt-focus"
+                >
+                  Send another message
+                </button>
+              </div>
+
+              <form
+                id="contact-form"
+                class="rounded-2xl border border-slate-200/90 dark:border-slate-700/80 bg-white/95 shadow-sm dark:bg-slate-900/40 dark:shadow-none p-6 sm:p-8 ring-1 ring-slate-900/[0.06] dark:ring-white/5"
+                novalidate
+              >
+                <div class="grid gap-5 sm:grid-cols-2">
+                  <div class="sm:col-span-1">
+                    <label for="contact_name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Full name</label>
+                    <input
+                      id="contact_name"
+                      name="contact_name"
+                      autocomplete="name"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                    />
+                    <p class="wt-field-error" data-error-for="contact_name" hidden></p>
+                  </div>
+                  <div class="sm:col-span-1">
+                    <label for="contact_email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
+                    <input
+                      id="contact_email"
+                      name="contact_email"
+                      type="email"
+                      autocomplete="email"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                    />
+                    <p class="wt-field-error" data-error-for="contact_email" hidden></p>
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="contact_topic" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Topic</label>
+                    <select
+                      id="contact_topic"
+                      name="contact_topic"
+                      class="js-validate mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                    >
+                      <option value="">Select a topic</option>
+                      <option value="demo">Request a demo</option>
+                      <option value="product">Product inquiry</option>
+                      <option value="custom">Custom software</option>
+                      <option value="partnership">Partnership</option>
+                      <option value="reseller">Reseller application</option>
+                      <option value="general">General inquiry</option>
+                    </select>
+                    <p class="wt-field-error" data-error-for="contact_topic" hidden></p>
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="contact_message" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Message</label>
+                    <textarea
+                      id="contact_message"
+                      name="contact_message"
+                      rows="5"
+                      class="mt-2 w-full rounded-xl border border-slate-300 dark:border-slate-600/80 bg-white dark:bg-brand-navy/60 px-4 py-3 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                      placeholder="Tell us what you need, timelines, and the best way to reach you."
+                    ></textarea>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="mt-6 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-semibold text-brand-navy shadow-glow hover:brightness-110 wt-focus wt-btn-shine"
+                >
+                  Send message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800/90 bg-slate-100 dark:bg-black/30 pb-10 pt-12">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <img src="assets/logo-wabantu2.png" width="240" height="64" class="h-12 w-auto sm:h-14" alt="Wabantu Technologies" />
+            <p class="mt-4 max-w-sm text-sm text-slate-600 dark:text-slate-400">
+              Custom software, web and mobile applications, and business websites—built for teams from small businesses to
+              enterprises.
+            </p>
+          </div>
+          <div class="grid gap-8 sm:grid-cols-3 lg:col-span-8">
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">Navigate</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#about">About</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#services">Services</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#solutions">Solutions</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#process">Process</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#faq">FAQ</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">Solutions</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="products/fantasy-league-software.html">Fantasy League</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="products/duka-langu.html">Duka Langu</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="products/school-management-software.html">School</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="products/hotel-management-system.html">Hotel</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#custom-software">Custom development</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-slate-900 dark:text-white">Contact</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#demo">Request demo</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#partners">Partners</a></li>
+                <li><a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="#contact">Contact</a></li>
+                <li>
+                  <a class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded" href="mailto:info@wabantutechnologies.com">info@wabantutechnologies.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 flex flex-col items-start justify-between gap-4 border-t border-slate-200 dark:border-slate-800/80 pt-8 sm:flex-row sm:items-center">
+          <p class="text-xs text-slate-500 dark:text-slate-400">© <span id="year"></span> Wabantu Technologies. All rights reserved.</p>
+          <div class="flex gap-4 text-xs text-slate-500 dark:text-slate-400">
+            <a href="#contact" class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded">Privacy (placeholder)</a>
+            <a href="#contact" class="text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-300 wt-focus rounded">Terms (placeholder)</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Ensures Tailwind CDN includes classes toggled only via JavaScript (active nav) -->
+    <span class="pointer-events-none absolute h-0 w-0 overflow-hidden text-cyan-700 opacity-0 dark:text-cyan-300" aria-hidden="true"></span>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
+

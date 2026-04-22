@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var k = "wt-theme";
+          var v = localStorage.getItem(k);
+          var dark = v === "dark" || (v !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+    <title>Fuel Utilization System | Wabantu Technologies</title>
+    <meta name="description" content="Fuel Utilization System for monitoring and accountability across fleets and fuel-intensive sites—by Wabantu Technologies." />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-700 antialiased dark:bg-brand-navy dark:text-slate-200">
+    <a class="wt-skip" href="#main">Skip to main content</a>
+    <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/80 backdrop-blur-md dark:bg-transparent dark:backdrop-blur-none">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <a href="../index.html" class="wt-focus rounded-lg"><img src="../assets/logo-wabantu2.png" width="240" height="64" class="h-10 w-auto sm:h-12" alt="Wabantu Technologies" /></a>
+        <nav class="flex flex-wrap items-center gap-1 text-sm font-medium sm:gap-2" aria-label="Primary">
+          <a href="../index.html#services" class="rounded-lg px-2 py-2 text-slate-600 dark:text-slate-300 wt-focus">Services</a>
+          <a href="../index.html#solutions" class="rounded-lg px-2 py-2 text-slate-600 dark:text-slate-300 wt-focus">Solutions</a>
+          <a href="../index.html#contact" class="rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-3 py-2 font-semibold text-brand-navy wt-focus">Contact</a>
+        </nav>
+        <button type="button" id="theme-toggle" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white dark:border-slate-600/60 dark:bg-white/5 wt-focus" aria-pressed="false" aria-label="Switch to dark mode">
+          <svg id="theme-icon-moon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+          <svg id="theme-icon-sun" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <nav class="text-sm text-slate-500" aria-label="Breadcrumb">
+          <a href="../index.html" class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus rounded">Home</a> / <span class="text-slate-700 dark:text-slate-200">Fuel Utilization System</span>
+        </nav>
+        <p class="mt-6 text-xs font-semibold uppercase tracking-wider text-lime-700 dark:text-lime-300">Operations</p>
+        <h1 class="mt-2 font-display text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">Fuel Utilization System</h1>
+        <div class="wt-product-hero mt-4">
+          <p class="text-lg text-slate-600 dark:text-slate-300">
+            Monitoring, allocation insights, and operational controls for fleets and fuel-intensive environments—so usage
+            stays accountable.
+          </p>
+          <div class="wt-product-grid mt-6">
+            <article class="wt-product-panel">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Best fit</p>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">Fleet and industrial teams tracking fuel usage, allocation, and efficiency patterns.</p>
+            </article>
+            <article class="wt-product-panel">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Outcome</p>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">Actionable utilization reporting that supports accountability and cost control.</p>
+            </article>
+          </div>
+        </div>
+
+        <section class="mt-10 wt-product-panel">
+          <h2 class="font-display text-xl font-semibold text-slate-900 dark:text-white">What problem it solves</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">
+            Fuel-heavy operations leak cost when utilization is opaque. This solution targets stronger visibility and
+            controls so leadership can act on trends—not guesses.
+          </p>
+        </section>
+
+        <section class="mt-10 wt-product-panel">
+          <h2 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Key features</h2>
+          <ul class="mt-4 list-inside list-disc space-y-2 text-slate-600 dark:text-slate-300">
+            <li>Utilization visibility across vehicles and sites</li>
+            <li>Operational controls that support accountability</li>
+            <li>Reporting aligned to management and audit needs</li>
+            <li>Designed for high-usage logistics and industrial contexts</li>
+          </ul>
+        </section>
+
+        <section class="mt-10 wt-product-panel">
+          <h2 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Who it is for</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">
+            Fleet operators, logistics organizations, and industrial sites that need disciplined fuel oversight.
+          </p>
+        </section>
+
+        <section class="mt-10 wt-product-panel">
+          <h2 class="font-display text-lg font-semibold text-slate-900 dark:text-white">Screenshots &amp; demos</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Examples from monitoring and reporting views in the fuel module.</p>
+          <div class="wt-media-grid mt-5">
+            <figure class="wt-media-card">
+              <img src="../assets/img/Fuel%20System%20Assets/Screenshot%202026-01-20%20092545.jpg" alt="Fuel utilization overview dashboard" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white">Utilization dashboard:</span> consolidates usage trends so teams can detect anomalies early.
+              </figcaption>
+            </figure>
+            <figure class="wt-media-card">
+              <img src="../assets/img/Fuel%20System%20Assets/Screenshot%202026-01-20%20092957.jpg" alt="Fuel utilization reporting screen" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white">Reporting view:</span> structured operational reports for accountability and management review.
+              </figcaption>
+            </figure>
+            <figure class="wt-media-card">
+              <img src="../assets/img/Fuel%20System%20Assets/Screenshot%202026-01-20%20092519.jpg" alt="Fuel allocation and tracking screen" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white">Allocation tracking:</span> helps teams verify distribution records across vehicles or sites.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="mt-12 rounded-2xl bg-gradient-to-r from-lime-500/15 to-cyan-500/15 p-8 ring-1 ring-lime-500/25">
+          <h2 class="font-display text-xl font-semibold text-slate-900 dark:text-white">Request this solution</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Outline fleet size, sites, and data sources you need to connect.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="../index.html#demo" class="inline-flex rounded-xl bg-gradient-to-r from-lime-500 to-cyan-500 px-6 py-3 text-sm font-semibold text-brand-navy wt-focus wt-btn-shine">Book a consultation</a>
+            <a href="../index.html#contact" class="inline-flex rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold dark:border-slate-600 dark:text-white wt-focus">Contact sales</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-slate-100 py-10 dark:border-slate-800 dark:bg-black/30">
+      <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500">
+        <a href="../index.html" class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus">← Back to home</a>
+        <p class="mt-4">© <span id="year"></span> Wabantu Technologies</p>
+      </div>
+    </footer>
+    <script src="../script.js" defer></script>
+  </body>
+</html>

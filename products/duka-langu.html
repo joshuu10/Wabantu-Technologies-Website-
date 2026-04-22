@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var k = "wt-theme";
+          var v = localStorage.getItem(k);
+          var dark = v === "dark" || (v !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+    <title>Duka Langu — Retail &amp; Shop Management | Wabantu Technologies</title>
+    <meta
+      name="description"
+      content="Duka Langu: an application for shops, pharmacies, supermarkets, and retail platforms—built by Wabantu Technologies."
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/tailwind.css" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-700 antialiased dark:bg-brand-navy dark:text-slate-200">
+    <a class="wt-skip" href="#main">Skip to main content</a>
+    <header
+      id="site-header"
+      class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/80 backdrop-blur-md transition-colors duration-300 dark:bg-transparent dark:backdrop-blur-none"
+    >
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <a href="../index.html" class="group flex shrink-0 items-center gap-2 wt-focus rounded-lg">
+          <img src="../assets/logo-wabantu2.png" width="240" height="64" class="h-10 w-auto sm:h-12" alt="Wabantu Technologies" />
+          <span class="sr-only">Wabantu Technologies — Home</span>
+        </a>
+        <nav class="flex flex-wrap items-center justify-end gap-1 text-sm font-medium sm:gap-2" aria-label="Primary">
+          <a href="../index.html#services" class="rounded-lg px-2 py-2 text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus">Services</a>
+          <a href="../index.html#solutions" class="rounded-lg px-2 py-2 text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus">Solutions</a>
+          <a href="../index.html#demo" class="rounded-lg px-2 py-2 text-slate-600 hover:bg-slate-900/5 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white wt-focus">Demo</a>
+          <a href="../index.html#contact" class="rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-3 py-2 text-sm font-semibold text-brand-navy shadow-glow wt-focus">Contact</a>
+        </nav>
+        <button
+          type="button"
+          id="theme-toggle"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 shadow-sm dark:border-slate-600/60 dark:bg-white/5 dark:text-slate-200 wt-focus"
+          aria-pressed="false"
+          aria-label="Switch to dark mode"
+        >
+          <svg id="theme-icon-moon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+          <svg id="theme-icon-sun" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="px-4 pb-20 pt-28 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-5xl">
+        <nav class="text-sm text-slate-500 dark:text-slate-400" aria-label="Breadcrumb">
+          <a href="../index.html" class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus rounded">Home</a>
+          <span aria-hidden="true"> / </span>
+          <span class="text-slate-700 dark:text-slate-200">Duka Langu</span>
+        </nav>
+        <p class="mt-6 text-xs font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-300">Retail · POS</p>
+        <h1 class="mt-2 font-display text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Duka Langu</h1>
+        <div class="wt-product-hero mt-4">
+          <p class="text-lg text-slate-600 dark:text-slate-300">
+            An application for shops, pharmacies, supermarkets, or any retail platform—point of sale, stock control, and
+            operational workflows aligned to how you sell.
+          </p>
+          <div class="wt-product-grid mt-6">
+            <article class="wt-product-panel">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Best fit</p>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">Retail stores, pharmacies, and supermarkets that need faster checkout and stock clarity.</p>
+            </article>
+            <article class="wt-product-panel">
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Delivery model</p>
+              <p class="mt-2 text-sm text-slate-700 dark:text-slate-200">Configurable core product with tailored implementation based on your workflow.</p>
+            </article>
+          </div>
+        </div>
+
+        <section class="mt-10 wt-product-panel" aria-labelledby="duka-problem">
+          <h2 id="duka-problem" class="font-display text-xl font-semibold text-slate-900 dark:text-white">What problem it solves</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">
+            Retailers often juggle separate tools for checkout, inventory, and reporting. Duka Langu is designed to
+            tighten visibility across the shop floor so teams spend less time reconciling and more time serving customers.
+          </p>
+        </section>
+
+        <section class="mt-10 wt-product-panel" aria-labelledby="duka-features">
+          <h2 id="duka-features" class="font-display text-xl font-semibold text-slate-900 dark:text-white">Key features</h2>
+          <ul class="mt-4 list-inside list-disc space-y-2 text-slate-600 dark:text-slate-300">
+            <li>Retail and shop operations tuned for varied inventory types</li>
+            <li>Sales and purchasing flows aligned to day-end accountability</li>
+            <li>Reporting and performance insight for owners and branch leads</li>
+            <li>Configurable for pharmacies, supermarkets, and general retail</li>
+          </ul>
+        </section>
+
+        <section class="mt-10 wt-product-panel" aria-labelledby="duka-who">
+          <h2 id="duka-who" class="font-display text-xl font-semibold text-slate-900 dark:text-white">Who it is for</h2>
+          <p class="mt-3 text-slate-600 dark:text-slate-300">
+            Independent shops, multi-branch outlets, pharmacies, and supermarket-style operators that need dependable
+            software without unnecessary complexity—from small businesses to larger retail programs.
+          </p>
+        </section>
+
+        <section class="mt-10 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700/80 dark:bg-brand-navy/50" aria-labelledby="duka-repo">
+          <h2 id="duka-repo" class="font-display text-lg font-semibold text-slate-900 dark:text-white">Source &amp; preview</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+            Public repository for the Duka Langu project (verify structure, releases, and documentation on GitHub).
+          </p>
+          <a
+            href="https://github.com/joshuu10/Duka-Langu"
+            class="mt-4 inline-flex rounded-xl border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-900 hover:border-cyan-400/50 dark:border-slate-600 dark:text-white wt-focus"
+            rel="noopener noreferrer"
+            target="_blank"
+            >View on GitHub</a
+          >
+        </section>
+
+        <section class="mt-10 wt-product-panel" aria-labelledby="duka-preview">
+          <h2 id="duka-preview" class="font-display text-lg font-semibold text-slate-900 dark:text-white">Screenshots &amp; demos</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+            Product snapshots from the live Duka Langu interface.
+          </p>
+          <div class="wt-media-grid mt-5">
+            <figure class="wt-media-card">
+              <img src="../assets/img/Duka%20Langu/login.png" alt="Duka Langu login screen" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white">Secure login:</span> provides a clean entry point for staff and administrators before role-based access is applied.
+              </figcaption>
+            </figure>
+            <figure class="wt-media-card">
+              <img src="../assets/img/Duka%20Langu/Dashboard-light.png" alt="Duka Langu overview screen" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white">Dashboard view:</span> gives store managers a quick summary of daily activity, stock movement, and key business signals.
+              </figcaption>
+            </figure>
+            <figure class="wt-media-card">
+              <img src="../assets/img/Duka%20Langu/settings%20theme.png" alt="Duka Langu sales and checkout screen" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+              <figcaption class="p-4 text-sm text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-900 dark:text-white">Profile and settings:</span> allows teams to configure the workspace, theme, and user preferences for day-to-day usability.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="mt-12 rounded-2xl bg-gradient-to-r from-cyan-500/15 to-teal-500/15 p-8 ring-1 ring-cyan-500/20" aria-labelledby="duka-cta">
+          <h2 id="duka-cta" class="font-display text-xl font-semibold text-slate-900 dark:text-white">Request this solution</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Tell us about your stores, rollout timeline, and integrations.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="../index.html#demo" class="inline-flex rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 px-6 py-3 text-sm font-semibold text-brand-navy shadow-glow hover:brightness-110 wt-focus wt-btn-shine"
+              >Book a consultation</a
+            >
+            <a href="../index.html#contact" class="inline-flex rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-900 dark:border-slate-600 dark:text-white hover:border-cyan-400/50 wt-focus"
+              >Contact sales</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800/90 bg-slate-100 dark:bg-black/30 py-10">
+      <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500 dark:text-slate-400 sm:px-6 lg:px-8">
+        <a href="../index.html" class="text-cyan-700 hover:underline dark:text-cyan-300 wt-focus">← Back to home</a>
+        <p class="mt-4">© <span id="year"></span> Wabantu Technologies</p>
+      </div>
+    </footer>
+    <script src="../script.js" defer></script>
+  </body>
+</html>

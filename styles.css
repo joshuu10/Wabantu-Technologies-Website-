@@ -1,0 +1,618 @@
+/**
+ * Wabantu Technologies — supplemental styles (loads after Tailwind).
+ * Brand tokens, motion, reveals, form states, reduced motion.
+ */
+
+:root {
+  --wt-navy: #0b1220;
+  --wt-navy-2: #111827;
+  --wt-cyan: #06b6d4;
+  --wt-teal: #14b8a6;
+  --wt-lime: #84cc16;
+  --wt-orange: #f97316;
+  --wt-glow: rgba(6, 182, 212, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .wt-reveal,
+  .wt-float,
+  .wt-hero-mesh,
+  .wt-shimmer {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Subtle hero mesh — light */
+.wt-hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.14), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(132, 204, 22, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 100%, rgba(249, 115, 22, 0.05), transparent);
+}
+
+html.dark .wt-hero-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.22), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(132, 204, 22, 0.12), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 100%, rgba(249, 115, 22, 0.08), transparent);
+}
+
+/* Scroll reveal */
+.wt-reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wt-reveal.wt-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating cards in hero */
+.wt-float {
+  animation: wt-float 6s ease-in-out infinite;
+}
+
+.wt-float-delay {
+  animation-delay: -2s;
+}
+
+@keyframes wt-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glass panel */
+.wt-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.12);
+}
+
+html.dark .wt-glass {
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: none;
+}
+
+/* Navbar solid state */
+#site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+}
+
+html.dark #site-header.is-scrolled {
+  background: rgba(11, 17, 32, 0.92);
+  border-bottom-color: rgba(148, 163, 184, 0.12);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Focus visible for custom elements */
+.wt-focus:focus-visible {
+  outline: 2px solid var(--wt-cyan);
+  outline-offset: 2px;
+}
+
+/* Form field error */
+.wt-input-error {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.35);
+}
+
+.wt-field-error {
+  font-size: 0.8125rem;
+  color: #b91c1c;
+  margin-top: 0.25rem;
+}
+
+html.dark .wt-field-error {
+  color: #fca5a5;
+}
+
+.wt-input-success {
+  border-color: #4ade80 !important;
+}
+
+/* Shimmer on primary button hover enhancement */
+.wt-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.wt-btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 45%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.wt-btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* FAQ */
+.wt-faq-panel[hidden] {
+  display: none;
+}
+
+/* Page load */
+body.wt-boot {
+  opacity: 0;
+}
+
+body.wt-ready {
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+/* Skip link */
+.wt-skip {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.wt-skip:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+/* Stat pulse dot */
+.wt-pulse-dot {
+  box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
+  animation: wt-pulse 2.5s ease-out infinite;
+}
+
+@keyframes wt-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 211, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+  }
+}
+
+/* Hero product carousel */
+.wt-carousel-shell {
+  position: relative;
+}
+
+.wt-carousel-viewport {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 17rem;
+}
+
+@media (min-width: 768px) {
+  .wt-carousel-viewport {
+    gap: 1.25rem;
+    min-height: 19rem;
+  }
+}
+
+.wt-carousel-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  min-height: 18.75rem;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.wt-carousel-card--side {
+  display: none;
+  flex: 0.82 1 0;
+  max-width: 29%;
+  min-width: 0;
+  cursor: pointer;
+  transform: scale(0.89);
+  opacity: 0.72;
+  padding: 0.85rem 0.78rem;
+  border: 2px solid rgba(15, 23, 42, 0.14);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.2);
+}
+
+html.dark .wt-carousel-card--side {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.45);
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .wt-carousel-card--side {
+    display: flex;
+  }
+}
+
+.wt-carousel-card--side:hover,
+.wt-carousel-card--side:focus-visible {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
+.wt-carousel-card--side h3 {
+  min-height: 2.45em;
+  overflow-wrap: anywhere;
+}
+
+.wt-carousel-card--side p {
+  overflow-wrap: anywhere;
+}
+
+.wt-carousel-card--side .mt-auto a {
+  font-size: 0.7rem;
+  padding: 0.45rem 0.55rem;
+}
+
+.wt-carousel-card--active {
+  flex: 1.8 1 0;
+  min-width: 0;
+  z-index: 2;
+  transform: scale(1);
+  opacity: 1;
+  padding: 1.25rem;
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 25px 50px -12px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(6, 182, 212, 0.12);
+}
+
+.wt-carousel-card h3 {
+  line-height: 1.25;
+}
+
+.wt-carousel-card--active h3 {
+  min-height: 2.6em;
+}
+
+.wt-carousel-card--side h3 {
+  min-height: 3.2em;
+}
+
+.wt-carousel-card--active p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wt-carousel-card--side p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .wt-carousel-card {
+    min-height: 17.5rem;
+  }
+}
+
+html.dark .wt-carousel-card--active {
+  border-color: rgba(34, 211, 238, 0.2);
+  background: rgba(15, 23, 42, 0.65);
+  box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.45);
+}
+
+.wt-product-logo {
+  margin: 0.55rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.8rem;
+  width: 2.8rem;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.wt-product-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.wt-product-logo--active {
+  height: 4.35rem;
+  width: 4.35rem;
+}
+
+.wt-carousel-card--side .wt-product-logo {
+  height: 3.15rem;
+  width: 3.15rem;
+}
+
+html.dark .wt-product-logo {
+  background: transparent;
+  box-shadow: none;
+}
+
+.wt-carousel-arrow {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.wt-carousel-dot[aria-current="true"] {
+  background: rgb(6 182 212);
+  transform: scale(1.15);
+}
+
+/* Product detail pages */
+.wt-product-hero {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background:
+    radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.12), transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(20, 184, 166, 0.08), transparent 60%),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 20px 45px -20px rgba(15, 23, 42, 0.24);
+}
+
+html.dark .wt-product-hero {
+  border-color: rgba(148, 163, 184, 0.12);
+  background:
+    radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.22), transparent 58%),
+    radial-gradient(ellipse at bottom left, rgba(20, 184, 166, 0.16), transparent 62%),
+    rgba(15, 23, 42, 0.56);
+  box-shadow: none;
+}
+
+.wt-product-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .wt-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.wt-product-panel {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.86);
+  padding: 1rem;
+}
+
+html.dark .wt-product-panel {
+  border-color: rgba(148, 163, 184, 0.12);
+  background: rgba(15, 23, 42, 0.52);
+}
+
+.wt-media-grid {
+  display: grid;
+  gap: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .wt-media-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.wt-media-card {
+  overflow: hidden;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+html.dark .wt-media-card {
+  border-color: rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.wt-media-card img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(20, 184, 166, 0.1));
+}
+
+/* Product media carousel */
+.wt-media-carousel {
+  position: relative;
+  margin-top: 1.25rem;
+}
+
+.wt-media-viewport {
+  overflow: hidden;
+  border-radius: 0.9rem;
+}
+
+.wt-media-track {
+  display: flex;
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.wt-media-slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+  transform: scale(0.94);
+  opacity: 0.72;
+  transition: transform 520ms ease, opacity 420ms ease;
+}
+
+.wt-media-slide.is-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.wt-media-slide .wt-media-card {
+  border-radius: 0.9rem;
+}
+
+.wt-media-slide .wt-media-card img {
+  height: 290px;
+}
+
+@media (max-width: 640px) {
+  .wt-media-slide .wt-media-card img {
+    height: 210px;
+  }
+}
+
+.wt-media-controls {
+  margin-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.wt-media-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  color: rgb(51, 65, 85);
+  transition: transform 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.wt-media-nav:hover {
+  transform: translateY(-1px);
+  color: rgb(8, 145, 178);
+  border-color: rgba(8, 145, 178, 0.35);
+}
+
+html.dark .wt-media-nav {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.72);
+  color: rgb(226, 232, 240);
+}
+
+.wt-media-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.wt-media-tab {
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: rgb(71, 85, 105);
+  padding: 0.35rem 0.72rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: all 220ms ease;
+}
+
+.wt-media-tab:hover {
+  border-color: rgba(8, 145, 178, 0.4);
+  color: rgb(8, 145, 178);
+}
+
+.wt-media-tab.is-active {
+  color: rgb(8, 145, 178);
+  border-color: rgba(8, 145, 178, 0.45);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(20, 184, 166, 0.12));
+  box-shadow: 0 8px 24px -18px rgba(6, 182, 212, 0.8);
+}
+
+html.dark .wt-media-tab {
+  border-color: rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.64);
+  color: rgb(203, 213, 225);
+}
+
+html.dark .wt-media-tab.is-active {
+  color: rgb(34, 211, 238);
+  border-color: rgba(34, 211, 238, 0.45);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.26), rgba(20, 184, 166, 0.18));
+}
+
+/* Partnerships cards images */
+.wt-partner-image {
+  width: min(100%, 12.75rem);
+  height: 6.9rem;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.95rem;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+}
+
+html.dark .wt-partner-image {
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
