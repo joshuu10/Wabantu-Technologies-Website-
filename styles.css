@@ -400,6 +400,107 @@ html.dark .wt-product-logo {
   transform: scale(1.15);
 }
 
+@keyframes wtSwipeNextActive {
+  from {
+    transform: translateX(86px) scale(0.92);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wtSwipeNextPrev {
+  from {
+    transform: translateX(38px) scale(1.02);
+    opacity: 0.95;
+  }
+  to {
+    transform: translateX(0) scale(0.89);
+    opacity: 0.72;
+  }
+}
+
+@keyframes wtSwipeNextNext {
+  from {
+    transform: translateX(112px) scale(0.72);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(0) scale(0.89);
+    opacity: 0.72;
+  }
+}
+
+@keyframes wtSwipePrevActive {
+  from {
+    transform: translateX(-86px) scale(0.92);
+    opacity: 0.4;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wtSwipePrevPrev {
+  from {
+    transform: translateX(-112px) scale(0.72);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(0) scale(0.89);
+    opacity: 0.72;
+  }
+}
+
+@keyframes wtSwipePrevNext {
+  from {
+    transform: translateX(-38px) scale(1.02);
+    opacity: 0.95;
+  }
+  to {
+    transform: translateX(0) scale(0.89);
+    opacity: 0.72;
+  }
+}
+
+.wt-swipe-next-active {
+  animation: wtSwipeNextActive 560ms cubic-bezier(0.18, 1, 0.3, 1);
+}
+
+.wt-swipe-next-prev {
+  animation: wtSwipeNextPrev 560ms cubic-bezier(0.18, 1, 0.3, 1);
+}
+
+.wt-swipe-next-next {
+  animation: wtSwipeNextNext 560ms cubic-bezier(0.18, 1, 0.3, 1);
+}
+
+.wt-swipe-prev-active {
+  animation: wtSwipePrevActive 560ms cubic-bezier(0.18, 1, 0.3, 1);
+}
+
+.wt-swipe-prev-prev {
+  animation: wtSwipePrevPrev 560ms cubic-bezier(0.18, 1, 0.3, 1);
+}
+
+.wt-swipe-prev-next {
+  animation: wtSwipePrevNext 560ms cubic-bezier(0.18, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wt-swipe-next-active,
+  .wt-swipe-next-prev,
+  .wt-swipe-next-next,
+  .wt-swipe-prev-active,
+  .wt-swipe-prev-prev,
+  .wt-swipe-prev-next {
+    animation: none !important;
+  }
+}
+
 /* Product detail pages */
 .wt-product-hero {
   position: relative;

@@ -444,25 +444,48 @@
     var i = 0;
     var autoRotateTimer = null;
     var AUTO_ROTATE_MS = 25000;
+    var swipeCleanupTimer = null;
 
     function restartAutoRotate() {
       if (autoRotateTimer) {
         window.clearInterval(autoRotateTimer);
       }
       autoRotateTimer = window.setInterval(function () {
-        setIndex(i + 1, false);
+        setIndex(i + 1, false, 1);
       }, AUTO_ROTATE_MS);
     }
 
-    function setIndex(idx, fromUser) {
+    function clearSwipeClasses() {
+      if (slotPrev) slotPrev.classList.remove("wt-swipe-next-prev", "wt-swipe-prev-prev");
+      if (slotActive) slotActive.classList.remove("wt-swipe-next-active", "wt-swipe-prev-active");
+      if (slotNext) slotNext.classList.remove("wt-swipe-next-next", "wt-swipe-prev-next");
+    }
+
+    function applySwipe(direction) {
+      if (!direction || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      clearSwipeClasses();
+      if (direction > 0) {
+        if (slotPrev) slotPrev.classList.add("wt-swipe-next-prev");
+        if (slotActive) slotActive.classList.add("wt-swipe-next-active");
+        if (slotNext) slotNext.classList.add("wt-swipe-next-next");
+      } else {
+        if (slotPrev) slotPrev.classList.add("wt-swipe-prev-prev");
+        if (slotActive) slotActive.classList.add("wt-swipe-prev-active");
+        if (slotNext) slotNext.classList.add("wt-swipe-prev-next");
+      }
+      if (swipeCleanupTimer) window.clearTimeout(swipeCleanupTimer);
+      swipeCleanupTimer = window.setTimeout(clearSwipeClasses, 620);
+    }
+
+    function setIndex(idx, fromUser, direction) {
       i = ((idx % n) + n) % n;
-      render();
+      render(direction);
       if (fromUser !== false) {
         restartAutoRotate();
       }
     }
 
-    function render() {
+    function render(direction) {
       var prev = WT_PRODUCTS[(i - 1 + n) % n];
       var cur = WT_PRODUCTS[i];
       var next = WT_PRODUCTS[(i + 1) % n];
@@ -496,39 +519,46 @@
             "click",
             (function (di) {
               return function () {
-                setIndex(di, true);
+                if (di === i) return;
+                var raw = di - i;
+                if (Math.abs(raw) > n / 2) {
+                  raw = raw > 0 ? raw - n : raw + n;
+                }
+                setIndex(di, true, raw > 0 ? 1 : -1);
               };
             })(d)
           );
           dotsEl.appendChild(b);
         }
       }
+
+      applySwipe(direction);
     }
 
-    if (prevBtn) prevBtn.addEventListener("click", function () { setIndex(i - 1, true); });
-    if (nextBtn) nextBtn.addEventListener("click", function () { setIndex(i + 1, true); });
+    if (prevBtn) prevBtn.addEventListener("click", function () { setIndex(i - 1, true, -1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { setIndex(i + 1, true, 1); });
 
     if (slotPrev) {
       slotPrev.addEventListener("click", function (e) {
         if (e.target.closest("a")) return;
-        setIndex(i - 1, true);
+        setIndex(i - 1, true, -1);
       });
       slotPrev.addEventListener("keydown", function (e) {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          setIndex(i - 1, true);
+          setIndex(i - 1, true, -1);
         }
       });
     }
     if (slotNext) {
       slotNext.addEventListener("click", function (e) {
         if (e.target.closest("a")) return;
-        setIndex(i + 1, true);
+        setIndex(i + 1, true, 1);
       });
       slotNext.addEventListener("keydown", function (e) {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          setIndex(i + 1, true);
+          setIndex(i + 1, true, 1);
         }
       });
     }
@@ -536,10 +566,10 @@
     root.addEventListener("keydown", function (e) {
       if (e.key === "ArrowLeft") {
         e.preventDefault();
-        setIndex(i - 1, true);
+        setIndex(i - 1, true, -1);
       } else if (e.key === "ArrowRight") {
         e.preventDefault();
-        setIndex(i + 1, true);
+        setIndex(i + 1, true, 1);
       }
     });
 
